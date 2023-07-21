@@ -12,11 +12,11 @@ the input as an argument. We are assuming that the user is not entering strings 
 """
 def main():
     
-    nummer = input("vargåd ange ett heltal: ")
-    if int(nummer) < 0:
-        print("kan enbart hantera positiva heltal")
+    number = input("please enter an interger: ")
+    if int(number) < 0:
+        print("can only handle positiv integers")
     else:
-        dec2bin(nummer)
+        dec2bin(number)
     
 """
 dec2bin() takes one argument and assumes it is an interger. it then checks the size of the interger to determine 
@@ -26,16 +26,16 @@ this remainder and then divide the quotiet by two and then save this remainder i
 we end up with the binary representaion backwards in the array. So dec2bin() also
 reverses the array, then joins it to a string to print out the correct formation.
 """
-def dec2bin(nummer):
-    ref = nummer
-    nummer = int(nummer)
+def dec2bin(number):
+    ref = number
+    number = int(number)
     bin_array = []
     
-    if nummer > 65635:
-        while nummer >= 1:
-            räst = nummer%2
-            nummer = nummer//2
-            bin_array.append(str(räst))
+    if number > 65635:
+        while number >= 1:
+            remainder = number%2
+            number = number//2
+            bin_array.append(str(remainder))
             
         added_zeros = 32-len(bin_array)
         
@@ -43,11 +43,11 @@ def dec2bin(nummer):
             bin_array.append("0")
             
 
-    elif nummer > 255:
-        while nummer >= 1:
-            räst = nummer%2
-            nummer = nummer//2
-            bin_array.append(str(räst))
+    elif number > 255:
+        while number >= 1:
+            remainder = number%2
+            number = number//2
+            bin_array.append(str(remainder))
             
         added_zeros = 16-len(bin_array)
         
@@ -57,10 +57,10 @@ def dec2bin(nummer):
             
         
     else:
-        while nummer >= 1:
-            räst = nummer%2
-            nummer = nummer//2
-            bin_array.append(str(räst))
+        while number >= 1:
+            remainder = number%2
+            number = number//2
+            bin_array.append(str(remainder))
             
         added_zeros = 8-len(bin_array)
         
@@ -68,7 +68,7 @@ def dec2bin(nummer):
             bin_array.append("0")
             
     bin_array.reverse()
-    print(f"Det binära talet av {ref} är :")
+    print(f"The binary number of {ref} is :")
     print("".join(bin_array))
                 
     
